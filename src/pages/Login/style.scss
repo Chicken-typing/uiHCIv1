@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.top-nav {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0 24px;
+    line-height: 38.4px;
+  }
+  img {
+    height: 30px;
+    width: 30px;
+  }
+  .icon-brand {
+    display: flex;
+    img {
+      margin: 0 10px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
+.login-label {
+  display: flex;
+  justify-content: center;
+  h2 {
+    margin: 30px 0;
+    font-size: 40px;
+    color: #333333;
+    transform: translateX(-10%);
+  }
+}
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
+  h1 {
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    font-size: 3.5em;
+    text-align: center;
+    text-shadow: 2px 2px rgb(173, 173, 173);
+  }
+  form {
+    a {
+      display: block;
+      color: #61afef;
+      text-decoration: underline;
+      &:hover {
+        color: #0000f1;
+      }
+    }
+    .btn-login {
+      width: 250px;
+      height: 35px;
+      border: none;
+      color: white;
+      background-color: red;
+      margin-top: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      &:hover {
+        background-color: white;
+        border: 1px solid red;
+        color: red;
+      }
+    }
+    .have-account {
+      font-size: 15px;
+    }
+    .other-choices {
+      display: flex;
+      text-align: center;
+      margin-top: 20px;
+      p {
+        position: relative;
+        top: -10px;
+        padding: 0 5px;
+      }
+      hr {
+        width: 80px;
+        height: 1px;
+      }
+    }
+  }
+  .fb-gmail {
+    display: flex;
+    .fb-button {
+      background-color: #0d8bf0;
+      width: 250px;
+      height: 35px;
+      border: none;
+      color: white;
+      margin-top: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      &:hover {
+        background-color: white;
+        border: 1px solid #0d8bf0;
+        color: #0d8bf0;
+      }
+    }
+    .gmail-button {
+      background-color: #0d8bf0;
+      width: 250px;
+      height: 35px;
+      border: none;
+      color: white;
+      margin-top: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      &:hover {
+        background-color: white;
+        border: 1px solid #0d8bf0;
+        color: #0d8bf0;
+      }
+    }
+  }
+}

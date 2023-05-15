@@ -1,0 +1,11 @@
+.AddProductTab {
+  display: flex;
+  justify-content: center;
+  .InputCart {
+    transition-duration: 0.5s;
+  }
+  .InputCart:hover {
+    box-shadow: 2px 2px 4px #646464;
+    transition-duration: 1s;
+  }
+}

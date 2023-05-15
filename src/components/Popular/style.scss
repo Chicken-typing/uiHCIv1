@@ -1,0 +1,64 @@
+.info {
+    .list-popular {
+        width: 250px;
+        border-radius: 4px;
+        color: black;
+        position: relative;
+        min-height: 350px;
+        &:hover {
+            .costProduct {
+                position: relative;
+                top: -20px;
+            }
+        }
+        .imgProduct {
+            height: 240px;
+            border-radius: 4px;
+            width: 100%;
+            &:hover {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+        .name-cost {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .costProduct {
+                padding: 2px 4px;
+                // position: absolute;
+                // left: 20px;
+                background-color: #FBDB9C;
+                margin: 10px;
+                width: 2%;
+                height: 2%;
+                flex: 0.2;
+                // bottom: 10px;
+                // z-index: 10;
+            }
+            .name {
+                flex: 0.8;
+                padding: 2px 4px;
+                margin: 10px 5px;
+                text-align: end;
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .slick-next .arrow-icon {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -30px;
+        right: 5px;
+    }
+    .slick-prev .arrow-icon {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -30px;
+        left: -4px;
+    }
+}

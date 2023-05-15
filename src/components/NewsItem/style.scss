@@ -1,0 +1,32 @@
+$background__color:#f6f4f4;
+$hover:#D65A31;
+.item-news{
+    background-color: $background__color;
+    display: flex;
+    width: 200px;
+    height: 380px;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin-top: 200px;
+    .news-title{
+        white-space:nowrap;
+        overflow:hidden;
+        font-weight: 800;
+        margin: 5px 0px;
+        &:hover{
+            color: $hover;
+        }
+    }
+    .news-description{
+        overflow: hidden;
+        margin: 10px 0px;
+    }
+    img{
+        width: 180px;
+        height: 200px;
+        align-self: center;
+        margin: 10px 0px;
+    }
+}
