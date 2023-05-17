@@ -1,8 +1,7 @@
 version: "3.8"
-
 services:
   app:
-    image: uiv1:v1
+    image: nguyenkhang244/dklstore:lastest
     ports:
       - "3000:3000"
     restart: unless-stopped
