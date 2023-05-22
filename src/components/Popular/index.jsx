@@ -15,7 +15,7 @@ function Popular({ data }) {
   const settings = {
     infinite: true,
     speed: 800,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3500,
     autoplay: true,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
