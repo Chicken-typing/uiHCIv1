@@ -1,13 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from "../../assets/images/logo-dark.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Input } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import authenOTP from "../../services/authenOTP";
 export default function ResetPassword() {
+  const dispatch = useDispatch
+  const [disable, setDisable] = useState(true)
   const navigate = useNavigate();
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
+  const validateOTP = (value) => {
+    console.log(value);
+    if(value.length === 6)
+    {
+      if(authenOTP(value))
+      {
+        setDisable(false)
+      }
+      else{
+        
+      }
+    }
+  }
+
   return (
     <div className="main_background py-12 xl:pl-14 px-10">
       <div className="container_box_shadow h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col rounded-[30px]">
@@ -31,20 +49,19 @@ export default function ResetPassword() {
           onFinish={onFinish}
         >
           <Form.Item
-            name="email"
+            name="OTP"
             rules={[
               {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
                 required: true,
-                message: "Please input your E-mail!",
+                message: "Please input your CODE OTP",
               },
+             
             ]}
           >
             <Input
-              placeholder="Code OTP"
+            onChange={e=>validateOTP(e.target.value)}
+              maxLength={6}
+              placeholder="OTP includes 6-digit"
               prefix={<MailOutlined className="site-form-item-icon" />}
             />
           </Form.Item>
@@ -53,9 +70,10 @@ export default function ResetPassword() {
             rules={[{ required: true, message: "Please input your Password!" }]}
           >
             <Input.Password
+            disabled={disable}
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              placeholder="Password"
+              placeholder="New Password"
             />
           </Form.Item>
           <Form.Item
@@ -81,6 +99,7 @@ export default function ResetPassword() {
             ]}
           >
             <Input.Password
+            disabled={disable}
               type="password"
               prefix={<LockOutlined className="site-form-item-icon" />}
               placeholder="Confirm password!"

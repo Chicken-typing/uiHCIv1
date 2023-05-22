@@ -14,4 +14,5 @@ export const API_CHAT_ROOM = `${BASE_URL}/room`;
 export const API_SIGNUP = `${BASE_URL}/users/signup`;
 export const API_SIGNIN = `${BASE_URL}/users/signin`;
 export const VALIDATE_TOKEN = `${process.env.REACT_APP_API_URL}/vtoken`;
-export const VALIDARE_EMAIL =  `${process.env.REACT_APP_API_URL}/email`
+export const VALIDATE_EMAIL =  `${process.env.REACT_APP_API_URL}/email`
+export const VALIDATE_OTP =  `${process.env.REACT_APP_API_URL}/otp`
