@@ -4,5 +4,16 @@
 body {
     font-family: sans-serif;
 }
+.main_background {
+    height: 100vh;
+    background-image: url('../assets/images/authenwallpaper.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+}
 
+.container_box_shadow {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
 @import "~antd/dist/antd.min.css";

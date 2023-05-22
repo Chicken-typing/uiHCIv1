@@ -1,5 +1,4 @@
 import React from 'react'
-import './style.scss'
 import logo from "../../assets/images/logo-dark.png"
 import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button, Input, message } from 'antd'
@@ -11,8 +10,8 @@ export default function ForgotPassword() {
         console.log('Received values of form: ', values);
       };
   return (
-    <div className="main py-12 xl:pl-14 px-10" >
-    <div className="container h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col  rounded-[30px]">
+    <div className="main_background py-12 xl:pl-14 px-10" >
+    <div className="container_box_shadow h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col  rounded-[30px]">
       <img src={logo} alt='logo of our store' width={100} height={100} style={{marginLeft: '-1.7rem'}}  />
       <h2 className='text-darkBlue font-black text-2xl mb-2'>Forgot Password</h2>
       <p className='text-darkBlue font-medium text-xs mb-7'>Please input your email address to reset password</p>

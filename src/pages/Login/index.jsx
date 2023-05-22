@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './style.scss'
 import { useCookies } from 'react-cookie'
 import logo from "../../assets/images/logo-dark.png"
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
@@ -59,11 +58,11 @@ const onPassword = e => {
             else {
 
                 if (res?.isActive) {
-                    dispatch(login(res))
-                    if(isChecked)
+                  if(isChecked)
                     {
                         handleSavePassword()
                     }
+                    dispatch(login(res))
                     success()
                     res.role === 'customer'
                         ? navigate(`/${path}`)
@@ -83,8 +82,8 @@ const onPassword = e => {
     return (
 
 
-        <div className="main py-12 xl:pl-14 px-10" >
-      <div className="container h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col rounded-[30px]">
+        <div className="main_background py-12 xl:pl-14 px-10" >
+      <div className="container_box_shadow h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col rounded-[30px]">
         <img src={logo} alt='logo of our store' width={100} height={100} style={{marginLeft: '-1.7rem'}}  />
         <h2 className='text-darkBlue font-black text-3xl mb-2'>Sign In</h2>
         <p className='text-darkBlue font-medium text-xs mb-7'>Welcome back! Please sign in to your account</p>

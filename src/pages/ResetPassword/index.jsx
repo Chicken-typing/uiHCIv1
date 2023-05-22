@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.scss";
 import logo from "../../assets/images/logo-dark.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Input } from "antd";
@@ -10,8 +9,8 @@ export default function ResetPassword() {
     console.log("Received values of form: ", values);
   };
   return (
-    <div className="main py-12 xl:pl-14 px-10">
-      <div className="container h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col rounded-[30px]">
+    <div className="main_background py-12 xl:pl-14 px-10">
+      <div className="container_box_shadow h-[100%] bg-white max-w-md px-14 xl:px-24 pt-10 xl:w-[40%] flex flex-col rounded-[30px]">
         <img
           src={logo}
           alt="logo of our store"
