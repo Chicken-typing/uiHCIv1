@@ -1,20 +1,8 @@
 .slider-container {
   position: relative;
 }
-.slick-next .arrow-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-}
-.slick-prev .arrow-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: -30px;
-  left: -4px;
-}
 .slick-slide {
-  padding: 0 8px;
+  padding: 0 10px;
 }
 
 .slick-arrow {
