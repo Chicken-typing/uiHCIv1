@@ -14,8 +14,9 @@ function Popular({ data }) {
 
   const settings = {
     infinite: true,
-    speed: 500,
-    autoplay: false,
+    speed: 800,
+    autoplaySpeed: 2500,
+    autoplay: true,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -26,7 +27,7 @@ function Popular({ data }) {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
         },
       },
       {
@@ -50,7 +51,7 @@ function Popular({ data }) {
   return (
     <div className="slider-container">
       <button
-        className="sliderNavigateBtn sliderNavigateBtn--right"
+        className="sliderNavigateBtn sliderNavigateBtn--prev"
         onClick={() => {
           slideRef.current.slickPrev();
         }}
