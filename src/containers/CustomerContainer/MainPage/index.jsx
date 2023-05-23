@@ -9,7 +9,6 @@ import MainBackground from '../../../components/MainBackground'
 import { useLocation } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { getPath } from '../../../action'
-import ChatButton from '../../../components/ChatButton'
 function MainPage() {
 
   const dispatch = useDispatch()
