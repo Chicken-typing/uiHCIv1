@@ -187,7 +187,7 @@ function ListNavigations() {
                 </div>
                 <span
                   className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] md:static absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] md:translate-x-0 md:translate-y-0 "
-                  // onClick={() => navigate("/")}
+                  onClick={() => navigate("/")}
                 >
                   <img src={logo} alt="Brand Logo" className="h-full w-full" />
                 </span>
