@@ -1,30 +1,32 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import logo from "../../assets/images/logo-dark.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Form, Button, Input } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import authenOTP from "../../services/authenOTP";
+import resetPassword from "../../services/resetPassword";
 export default function ResetPassword() {
-  const dispatch = useDispatch
-  const [disable, setDisable] = useState(true)
+  const { email } = useParams();
+  const dispatch = useDispatch;
+  const [disable, setDisable] = useState(true);
+  const [userID, setUserID] = useState("");
   const navigate = useNavigate();
+  const getRes = (data, enable) => {
+    setDisable(enable);
+    setUserID(data);
+  };
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    const password = delete values.confirm;
+    resetPassword({ password, user_id: userID }, navigate("/login"));
   };
   const validateOTP = (value) => {
-    console.log(value);
-    if(value.length === 6)
-    {
-      if(authenOTP(value))
-      {
-        setDisable(false)
-      }
-      else{
-        
-      }
+    if (value.length === 6) {
+      setTimeout(() => {
+        authenOTP({ code: value, email }, getRes);
+      }, 500);
     }
-  }
+  };
 
   return (
     <div className="main_background py-12 xl:pl-14 px-10">
@@ -40,7 +42,8 @@ export default function ResetPassword() {
           Reset Password
         </h2>
         <p className="text-darkBlue font-medium text-xs mb-7">
-          We have sent a vertification code by email to <span>[email address]</span>. Enter it below to reset your password
+          We have sent a vertification code by email to{" "}
+          <span>[email address]</span>. Enter it below to reset your password
         </p>
         <Form
           name="normal_login"
@@ -49,17 +52,15 @@ export default function ResetPassword() {
           onFinish={onFinish}
         >
           <Form.Item
-            name="OTP"
             rules={[
               {
                 required: true,
                 message: "Please input your CODE OTP",
               },
-             
             ]}
           >
             <Input
-            onChange={e=>validateOTP(e.target.value)}
+              onChange={(e) => validateOTP(e.target.value)}
               maxLength={6}
               placeholder="OTP includes 6-digit"
               prefix={<MailOutlined className="site-form-item-icon" />}
@@ -70,7 +71,7 @@ export default function ResetPassword() {
             rules={[{ required: true, message: "Please input your Password!" }]}
           >
             <Input.Password
-            disabled={disable}
+              disabled={disable}
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
               placeholder="New Password"
@@ -99,7 +100,7 @@ export default function ResetPassword() {
             ]}
           >
             <Input.Password
-            disabled={disable}
+              disabled={disable}
               type="password"
               prefix={<LockOutlined className="site-form-item-icon" />}
               placeholder="Confirm password!"

@@ -1,14 +1,16 @@
 import axios from "axios";
 import { VALIDATE_OTP } from "../linkTo";
 import { errorNotify } from "../utils";
-const authenOTP = async(data ) =>
-  await axios
+const authenOTP = async(data,callback ) =>
+   {
+    await axios
     .post(VALIDATE_OTP, data)
     .then((res) =>{
-        return res.data
+        callback(res.data.data, false)
     })
     .catch((error) => {
-        errorNotify("Email does not exist!")
-        return false
+        callback("", true)
+        errorNotify(error.message)
     });
+   }
 export default authenOTP;

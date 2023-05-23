@@ -39,7 +39,7 @@ function Router() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgotPassword" element={<ForgotPassword/>}/>
-      <Route path="/ResetPassword" element={<ResetPassword/>}/>
+      <Route path="/ResetPassword/:email" element={<ResetPassword/>}/>
       <Route path="/" element={<Customer />}>
         <Route path="" element={<Navigate to="home" replace />} />
         <Route path="home" element={<MainPage />} />

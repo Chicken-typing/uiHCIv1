@@ -75,21 +75,6 @@ const Register = () => {
                     <Input />
                 </Item>
                 <Item
-                    label="Birthday"
-                    name='birthday'
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your birthday.',
-                            type: 'object'
-                        }
-
-                    ]}>
-                    <DatePicker format={'L'} style={{
-                        width: '100%',
-                    }} />
-                </Item>
-                <Item
                     label="Phone number"
                     name='phone'
                     rules={[

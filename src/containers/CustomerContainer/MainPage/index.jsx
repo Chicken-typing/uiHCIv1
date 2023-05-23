@@ -9,7 +9,6 @@ import MainBackground from '../../../components/MainBackground'
 import { useLocation } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { getPath } from '../../../action'
-import ChatButton from '../../../components/ChatButton'
 function MainPage() {
 
   const dispatch = useDispatch()
@@ -26,8 +25,9 @@ function MainPage() {
         <ListPopular  />
       </div>
       <div id='news' className='justify-center items-center'><News /></div>
-      <ChatButton/>
-      <BackTop style={{ right: '50px' }} />
+      <div className='lg:bottom-96'>
+      <BackTop  style={{ right: '50px', bottom: "384px" }} />
+      </div>
     </div>
   )
 }
