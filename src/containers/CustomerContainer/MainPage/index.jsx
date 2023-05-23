@@ -25,9 +25,7 @@ function MainPage() {
         <ListPopular  />
       </div>
       <div id='news' className='justify-center items-center'><News /></div>
-      <div className='lg:bottom-96'>
-      <BackTop  style={{ right: '50px', bottom: "384px" }} />
-      </div>
+      <BackTop style={{ right: '50px' }} />
     </div>
   )
 }
