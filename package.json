@@ -50,7 +50,6 @@
     "redux-saga": "^1.2.1",
     "sass": "^1.55.0",
     "slick-carousel": "^1.8.1",
-    "socket.io-client": "^4.5.4",
     "styled-components": "^5.3.6",
     "tippy.js": "^6.3.7",
     "validate.js": "^0.13.1",

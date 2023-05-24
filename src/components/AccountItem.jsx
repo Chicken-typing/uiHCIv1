@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { DeleteOutlined, SettingOutlined, MailOutlined, UserOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import { Avatar, Badge, Card, Space, Popconfirm, Modal, Form, Input, Switch, Button, Divider, Tag, Select } from 'antd';
 import updateUser from '../services/updateUser';
-import ChatBox from './ChatBox';
 import { API_CHAT_ROOM, API_USER } from '../linkTo';
 const { Meta } = Card;
 const { Item } = Form;
@@ -27,9 +26,7 @@ const AccountItem = ({ url, user, hasEmail, handleDeleteUser, isDisable }) => {
         updateUser(url, user._id, values)
         setIsModalOpen(false);
     };
-    const handleCloseChatbox = () => {
-        setOpenChat(!openChat)
-    }
+
     const getBagde = () => openChat ? setBagde(false) : setBagde(true)
     //TODO: fetch newest message
     return (
@@ -119,7 +116,6 @@ const AccountItem = ({ url, user, hasEmail, handleDeleteUser, isDisable }) => {
                     </Item>
                 </Form>
             </Modal>
-            <ChatBox user={user} handleCloseChatbox={handleCloseChatbox} open={openChat} getBagde={getBagde} />
         </>
     );
 }
