@@ -12,31 +12,30 @@ export default function ListOrders() {
     setDataset(data)
   }, [data])
   const options = [{
-    lable: 'Paid',
-    value:'paid'
+    value: 'paid',
+    label: 'Paid',
   },
     {
-      lable: 'Unpaid',
-      value: 'unpaid'
+      value: 'unpaid',
+      label: 'Unpaid',
     },
     {
-      lable: 'Deleivered',
-      value: 'isDelivered'
+      value: 'isDelivered',
+      label: 'Delivered',
     },
   ]
   const handleChange = (value) => {
-    console.log(value);
+    setFilter(value)
   };
   return (
     <>
       <div><Select
-        mode="multiple"
-        allowClear
+        mode="single"
         style={{
           width: '100%',
         }}
         placeholder="Please select"
-        defaultValue={['paid']}
+        defaultValue={['Paid']}
         onChange={handleChange}
         options={options}
       /></div>
