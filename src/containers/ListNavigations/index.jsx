@@ -207,7 +207,7 @@ function ListNavigations() {
                             shape="circle"
                             icon={<SearchOutlined />}
                             size="large"
-                            // onClick={() => setShow(!show)}
+                            onClick={() => setShow(!show)}
                             style={{ top: "-5px" }}
                           />
                         </Tooltip>
