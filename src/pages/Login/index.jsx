@@ -57,7 +57,6 @@ const Login = () => {
     }
   };
   const handleLogin = (value) => {
-    console.log(value);
     loginUser(value, handleGetRes);
   };
 
@@ -78,7 +77,6 @@ const Login = () => {
         <Form
           name="normal_login"
           className="login-form"
-          initialValues={{ remember: true }}
           onFinish={(value) => handleLogin(value)}
         >
           <Form.Item
@@ -118,9 +116,8 @@ const Login = () => {
             />
           </Form.Item>
 
-          <Form.Item>
-            <div className="flex justify-between">
-              <Form.Item name="remember" valuePropName="checked" noStyle>
+            <div className="flex justify-between pb-30" style={{"marginBottom":"20px"}}>
+              <Form.Item name="remember" valuePropName="checked" initialValue={true} noStyle>
                 <Checkbox
                   onClick={handleCheckbox}
                   checked={isChecked}
@@ -133,7 +130,6 @@ const Login = () => {
                 Forgot password
               </Link>
             </div>
-          </Form.Item>
 
           <Form.Item>
             <Button

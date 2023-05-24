@@ -10,7 +10,7 @@ const authenOTP = async(data,callback ) =>
     })
     .catch((error) => {
         callback("", true)
-        errorNotify(error.message)
+        errorNotify("Your OTP is wrong.")
     });
    }
 export default authenOTP;

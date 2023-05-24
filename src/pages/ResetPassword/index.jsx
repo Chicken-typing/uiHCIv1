@@ -17,8 +17,7 @@ export default function ResetPassword() {
     setUserID(data);
   };
   const onFinish = (values) => {
-    const password = delete values.confirm;
-    resetPassword({ password, user_id: userID }, navigate("/login"));
+    resetPassword({ password:values.password, user_id: userID }, navigate("/login"));
   };
   const validateOTP = (value) => {
     if (value.length === 6) {
@@ -46,9 +45,8 @@ export default function ResetPassword() {
           <span>[email address]</span>. Enter it below to reset your password
         </p>
         <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{ remember: true }}
+          name="reset_password"
+          className="reset_password"
           onFinish={onFinish}
         >
           <Form.Item
