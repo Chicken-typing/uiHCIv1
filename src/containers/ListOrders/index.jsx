@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import OrderItem from '../../components/OrderItem'
 import './style.scss'
+import { ContactPageSharp } from '@mui/icons-material'
 export default function ListOrders() {
   const [dataset, setDataset] = useState([])
   const [filter,setFilter]=useState('')
@@ -25,7 +26,7 @@ export default function ListOrders() {
     },
   ]
   const handleChange = (value) => {
-    setFilter(value)
+    console.log(value)
     switch (value) {
       case 'paid': {
         
