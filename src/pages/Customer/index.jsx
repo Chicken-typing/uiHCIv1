@@ -10,7 +10,7 @@ function Customer() {
   const navigate = useNavigate();
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       <ListNavigations />
       <div>

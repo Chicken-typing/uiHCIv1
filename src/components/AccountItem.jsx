@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DeleteOutlined, SettingOutlined, MailOutlined, UserOutlined, CloseCircleOutlined } from '@ant-design/icons';
-import { Avatar, Badge, Card, Space, Popconfirm, Modal, Form, Input, Switch, Button, Divider, Tag } from 'antd';
+import { Avatar, Badge, Card, Space, Popconfirm, Modal, Form, Input, Switch, Button, Divider, Tag, Select } from 'antd';
 import updateUser from '../services/updateUser';
 import ChatBox from './ChatBox';
 import { API_CHAT_ROOM, API_USER } from '../linkTo';
@@ -10,7 +10,7 @@ const AccountItem = ({ url, user, hasEmail, handleDeleteUser, isDisable }) => {
     const [form] = Form.useForm();
     const [openChat, setOpenChat] = useState(false)
     const [chatUser, setChatUser] = useState()
-    const [bagde,setBagde]=useState(false)
+    const [bagde, setBagde] = useState(false)
     const handleCheckMail = () => {
         setOpenChat(!openChat)
         setBagde(false)
@@ -32,7 +32,6 @@ const AccountItem = ({ url, user, hasEmail, handleDeleteUser, isDisable }) => {
     }
     const getBagde = () => openChat ? setBagde(false) : setBagde(true)
     //TODO: fetch newest message
-    // const [message, setMessage] = useState()
     return (
         <>
             <Card
@@ -96,16 +95,21 @@ const AccountItem = ({ url, user, hasEmail, handleDeleteUser, isDisable }) => {
                     }}
                     onFinish={value => onFinish(value)}
                     autoComplete="off">
-                    <Item label="Privilege"
-                    // name="password"
-                    // rules={[
-                    // {
-                    //     required: true,
-                    //     message: 'Password must not be empty.',
-                    // },
-                    // ]}
-                    >
-                        <Input disabled />
+                    <Item
+                        name="role"
+                        label="Privilege">
+                        <Select
+                            defaultValue={user.role}
+                            options={[
+                            {
+                                value: 'admin',
+                                label: 'Admin',
+                            },
+                            {
+                                value: 'customer',
+                                label: 'Customer',
+                            },
+                        ]} />
                     </Item>
                     <Item label="Active" name="isActive" valuePropName='checked' initialValue={user.isActive}>
                         <Switch />

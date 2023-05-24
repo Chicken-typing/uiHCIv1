@@ -1,0 +1,147 @@
+.itemCard {
+  * {
+    line-height: 1.3;
+  }
+  width: 100%;
+  position: relative;
+  .imgContainer {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:hover {
+      .overlay {
+        display: flex;
+      }
+    }
+  }
+  .overlay {
+    z-index: 100;
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+
+    .overlay__container {
+      padding: 4px;
+      border-radius: 8px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 100%;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .addBtn,
+    .viewMoreBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      border-radius: 4px;
+      padding: 8px 10px;
+      gap: 8px;
+      border: 1px solid transparent;
+      transition: 0.15s linear;
+      span {
+        font-weight: 600;
+        line-height: 1.3;
+      }
+    }
+    .addBtn {
+      color: white;
+      background-color: #4dabf7;
+
+      &:hover {
+        background-color: rgba(#4dabf7, 0.2);
+        color: #4dabf7;
+        border-color: #4dabf7;
+      }
+    }
+    .viewMoreBtn {
+      color: #4dabf7;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+  .imgProduct {
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 4px 12px rgba(#000, 0.1);
+    width: 100%;
+    background-color: #f6f6f6;
+  }
+  .content {
+    .brand {
+      color: rgba(black, 0.5);
+      font-size: 16px;
+    }
+    padding: 8px 0;
+    .wrapper {
+      display: flex;
+      align-items: center;
+    }
+    cursor: pointer;
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: 12px;
+      color: #40a9ff;
+    }
+    .name {
+      font-weight: 600;
+      text-transform: uppercase;
+      flex: 1;
+      overflow: hidden;
+      display: -webkit-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      -webkit-box-orient: vertical;
+      font-size: 16px;
+      transition: 0.1s ease;
+    }
+    &:hover {
+      .name {
+        color: rgba(#40a9ff, 0.3);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .itemCard {
+    .content {
+      .brand {
+        font-size: 12px;
+      }
+      .price {
+        font-size: 16px;
+        font-weight: 700;
+        margin-left: 4px;
+        gap: 0;
+      }
+      .name {
+        font-size: 12px;
+      }
+    }
+  }
+}

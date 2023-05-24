@@ -72,19 +72,6 @@ const CreateAdminForm = (open, handleFinish, handleTurnOff) => {
                     <Input />
                 </Form.Item>
                 <Form.Item
-                    label="Birthday"
-                    name='birthday'
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your birthday.',
-                            type: 'object'
-                        }
-
-                    ]}>
-                    <DatePicker format={'DD/MM/YY'} />
-                </Form.Item>
-                <Form.Item
                     label="Email"
                     name="email"
                     rules={[
@@ -148,25 +135,25 @@ export default function AdminList() {
     return (
         <>
             <Layout>
-                    <Header
-                        style={{
-                            backgroundColor: '#1976d2',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'flex-end'
+                <Header
+                    style={{
+                        backgroundColor: '#1976d2',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-end'
+                    }}
+                >
+                    <Button type='link'>
+                        <PlusCircleOutlined style={{
+                            fontSize: 24,
+                            color: 'white'
                         }}
-                    >
-                        <Button type='link'>
-                            <PlusCircleOutlined style={{
-                                fontSize: 24,
-                                color: 'white'
+                            onClick={() => {
+                                setIsModalOpen(true);
                             }}
-                                onClick={() => {
-                                    setIsModalOpen(true);
-                                }}
-                            />
-                        </Button>
-                    </Header>
+                        />
+                    </Button>
+                </Header>
                 <Content
                     style={{
                         overflow: "auto",
