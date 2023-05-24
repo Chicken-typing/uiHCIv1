@@ -94,9 +94,9 @@ const AccountItem = ({ url, user, hasEmail, handleDeleteUser, isDisable }) => {
                     autoComplete="off">
                     <Item
                         name="role"
-                        label="Privilege">
+                        label="Privilege"
+                        initialValue={user.role}>
                         <Select
-                            defaultValue={user.role}
                             options={[
                             {
                                 value: 'admin',
